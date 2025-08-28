@@ -1,0 +1,221 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
+
+/* my css */
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(45, 45, 45);
+    --bg-color: rgb(213, 213, 180);
+    --color-on-bg: rgb(85, 88, 26);
+}
+
+body {
+    background-color: rgb(236, 236, 240);
+}
+header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color);
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    font-weight: 900;
+    color: var(--color-on-bg);
+    padding: 16px 28px;
+    
+}
+header button:hover {
+    cursor: pointer;
+    transition: 250ms;
+    background-color: var(--color-on-bg);
+    box-shadow: 1px 1px 4px 2px rgb(46, 46, 46);
+    color: white;
+    z-index: 2;
+}
+header button.active {
+    background-color: var(--color-on-bg);
+    color: white;
+    box-shadow: 1px 1px 4px rgb(93, 93, 93);
+}
+header nav {
+    display:flex;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 32px;
+    gap:32px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px 4px rgb(216, 216, 216);
+}
+
+#content ul {
+    list-style: none;
+    padding: 0;
+}
+#content li {
+    border-bottom: 1px solid rgb(203, 203, 203);
+    padding:8px 0px;
+}
+
+#content h2 {
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--bg-color);
+    width: fit-content;
+}
+
+#content > * {
+    padding-inline: 32px;
+}
+#content > *:first-child {
+    margin-top: 32px;
+} 
+#content > *:last-child {
+    margin-bottom: 32px;
+}
+#content h1, #content h2 {
+    color: var(--color-on-bg);
+    text-align: center;
+}
+
+#content div:has(h1) {
+    text-align: center;
+}
+
+#content div:has(> p:first-child) {
+    /* text-indent: 5ch; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap:16px;
+}
+
+.contact-card { 
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    padding:8px;
+    width: 400px;
+    min-width: fit-content;
+    padding:24px 16px;
+    background-color: var(--bg-color);
+    color: var(--color-on-bg);
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px 1px rgb(225, 225, 225);
+    transition: 200ms;
+}
+
+.contact-card:hover {
+    box-shadow: 1px 1px 4px 2px rgb(170, 170, 170);
+    letter-spacing: 0.5px;
+}
+
+.contact-card > *:nth-child(1) {
+    letter-spacing: 1px;
+    margin-bottom: -8px;
+    font-size: 1.5rem;
+}
+
+
+.contact-card > *:nth-child(2) {
+    margin-bottom: 8px;
+    opacity: 0.6;
+    font-size: 0.8rem;
+    letter-spacing: 0px;
+}
+
+div:has(.menu-items) {
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+.menu-items {
+    margin-block: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-items > * {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 4px rgb(225, 225, 225);
+    border-radius: 4px;
+    transition: 200ms;
+}
+
+.menu-items > *:hover {
+    box-shadow: 1px 1px 4px 1px rgb(193, 193, 193);
+    letter-spacing: 0.2px;
+}
+
+.menu-items h3 {
+    border-radius: 4px 4px 0px 0px;
+    color:  var(--color-on-bg);
+    background-color: var(--bg-color);
+    padding: 4px 12px;
+}
+
+.menu-items p {
+    padding: 8px 12px;
+}
